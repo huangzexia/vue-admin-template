@@ -1,0 +1,85 @@
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td ,textarea,input { margin:0; padding:0; box-sizing: border-box; }
+ol, ul, li { list-style: none; }
+html{overflow-y:auto;}
+body{
+  font-family: $font-stack;
+  @include fz($browser-default-font-size );
+  @include background($default-body-background-color);
+  color: #333;
+  margin:0;
+  padding:0;
+}
+i{
+  cursor: pointer;
+}
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {text-decoration: none}
+.cl{clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+.no-select{
+  user-select: none;
+}
+.cursor-pointer{
+  cursor: pointer !important;
+}
+img,button{
+  @extend .no-select;
+}
+button{
+  border: none;
+  outline: none;
+  @extend .cursor-pointer;
+}
+.text-center{
+  text-align: center;
+}
+.text-indent {
+  text-indent: 2em;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.disabled{
+  cursor: no-drop;
+  pointer-events: none;
+}
+.bold{
+  font-weight: bold;
+}
+.overflow-hidden{
+  overflow: hidden !important;
+}
+
+.disable-button{
+  &:hover{
+    cursor: no-drop;
+    @include color-border(#999999);
+  }
+}
+
+// 滚动条样式美化
+::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+  background-color: #f8f8f8;
+}
+::-webkit-scrollbar {//滚动条的宽度
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {//滚动条的设置
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 28px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}

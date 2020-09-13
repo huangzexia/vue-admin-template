@@ -1,0 +1,36 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "member-access": false,
+    "max-line-length": [true, 300],
+    "no-console": false,
+    "indent": false,
+    "no-irregular-whitespace": false, //  这禁止掉 空格报错检查
+    "no-bitwise": false,
+    "whitespace": false,
+    "interface-name": false,
+    "no-extra-parens": false,
+    "no-consecutive-blank-lines": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": false,
+    "trailing-comma": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"], //允许使用逻辑运算符执行快速空检查并执行副作用的方法或函数调用（ 例如e && e.preventDefault（））
+    "align": [true, "parameters", "statements"], // 对齐
+    "variable-name":[true,"check-format", // 定义变量命名规则
+      "allow-leading-underscore",
+      "allow-trailing-underscore",
+      "allow-snake-case",
+      "ban-keywords"],
+    "no-unused-variable": false, // 定义需使用
+    "semicolon": [false, "never"] // 是否提示不必要的分号
+  }
+}

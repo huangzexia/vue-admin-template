@@ -1,0 +1,181 @@
+$font-stack: 'Microsoft Yahei', Arial, Helvetica, sans-serif; // 默认字体
+$primary-color: #233E6B; // 默认主题色值
+$default-width: 80%; // 默认可视区域宽度
+$base-width: 1000px; // 默认可视区域的宽度
+$image-wrap-height: 200px; // 默认图片区域的高度
+$default-body-background-color: rgb(255,255,255); // 默认body的背景颜色
+$default-title-color: #333; // 默认字体颜色
+$default-title-font-size: 16px; // 默认主题名称字体大小
+$browser-default-font-size: 16px !default; // 默认body的字体大小
+$font-default-font-size: 14px !default; // 默认内部字体大小
+
+// 默认背景颜色
+@mixin background($color:#fff) {
+  background-color: $color;
+}
+
+//$px为需要转换的字号
+@function pxTorem($px, $isImportant: ''){
+  @return unquote(if(str_index(quote($px), "px"), $px / $browser-default-font-size * 1rem, $px) + ' ' + $isImportant);
+
+}
+
+// 居中定位
+@mixin position-center($w, $h) {
+  position: absolute;
+  width: pxTorem($w);
+  height: pxTorem($h);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+/* 宽高/行高 */
+@mixin width-height-lineHeight($width, $height, $line-height: auto) {
+  width: pxTorem($width);
+  height: pxTorem($height);
+  line-height: pxTorem($line-height);
+}
+
+/* 宽/isImportant:提升优先级 */
+@mixin width($w, $isImportant:'') {
+  width: pxTorem($w, $isImportant);
+}
+
+// 最大最小宽度
+@mixin min-width($w) {
+  min-width: pxTorem($w);
+}
+@mixin max-width($w) {
+  max-width: pxTorem($w);
+}
+@mixin width-height($w, $h) {
+  width: pxTorem($w);
+  height: pxTorem($h);
+}
+@mixin width-maxWidth($w, $mx) {
+  width: pxTorem($w);
+  max-width: pxTorem($mx);
+}
+
+// 高度
+@mixin height($h, $isImportant:'') {
+  height: pxTorem($h, $isImportant);
+}
+
+// 行高
+@mixin line-height($h) {
+  line-height: pxTorem($h);
+}
+
+// 最大最小高度
+@mixin min-height($h) {
+  min-height: pxTorem($h);
+}
+@mixin max-height($h) {
+  max-height: pxTorem($h);
+}
+
+// 高度/行高
+@mixin height-lineHeight($h) {
+  height: pxTorem($h);
+  line-height: pxTorem($h);
+}
+
+// 内边距（padding）
+@mixin padding($top, $right:$top, $bottom:$top, $left:$top) {
+  padding: pxTorem($top) pxTorem($right) pxTorem($bottom) pxTorem($left);
+}
+@mixin padding-top($top) {
+  padding-top: pxTorem($top) ;
+}
+@mixin padding-bottom($bottom) {
+  padding-bottom: pxTorem($bottom) ;
+}
+@mixin padding-left($left) {
+  padding-left: pxTorem($left) ;
+}
+@mixin padding-right($right) {
+  padding-right: pxTorem($right) ;
+}
+@mixin padding-bottom($bottom) {
+  padding-bottom: pxTorem($bottom) ;
+}
+
+// 外边距（margin）
+@mixin margin($top, $right:$top, $bottom:$top, $left:$top) {
+  margin: pxTorem($top) pxTorem($right) pxTorem($bottom) pxTorem($left);
+}
+@mixin margin-center() {
+  margin: 0 auto;
+}
+@mixin margin-bottom($px) {
+  margin-bottom: pxTorem($px);
+}
+@mixin margin-top($px) {
+  margin-top: pxTorem($px);
+}
+@mixin margin-right($px) {
+  margin-right: pxTorem($px);
+}
+@mixin margin-left($px) {
+  margin-left: pxTorem($px);
+}
+
+// 文字
+@mixin text-center() {
+  text-align: center;
+}
+@mixin text-left() {
+  text-align: left;
+}
+@mixin text-right() {
+  text-align: right;
+}
+
+@mixin color($color:#fff) {
+  color: $color;
+}
+// 字体大小
+@mixin fz($fontSize: $font-default-font-size, $isImportant:'') {
+  font-size: pxTorem( $fontSize, $isImportant );
+}
+
+// 边框
+@mixin border($color:#fff, $px: 1px) {
+  border: $px solid $color;
+}
+@mixin border-radius($px) {
+  border-radius: pxTorem($px);
+}
+@mixin color-border($color:#fff) {
+  color: $color;
+  @include border($color);
+}
+
+// flex
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// css截取字符串
+@mixin text-overflow($line:1) {
+  @if $line==1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  @else {
+      display: -webkit-box;
+      -webkit-line-clamp: $line;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+}
+
+// 引入其他基础样式表
+// @import "./base.scss";
+// @import "./resetElement.scss";

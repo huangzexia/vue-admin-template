@@ -1,0 +1,33 @@
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 5px;  /*滚动条宽度*/
+    height: 5px;  /*滚动条高度*/
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  /*滚动条的背景区域的圆角*/
+    background-color: transparent;/*滚动条的背景颜色*/  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  /*滚动条的圆角*/
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: rgba(144,147,153,.3);  /*滚动条的背景颜色*/
+}
+//Ie下滚动条样式
+HTML {
+  scrollbar-base-color: #134087;
+  //scrollbar-base-color: #134087;
+  scrollbar-3dlight-color:#134087;
+  scrollbar-highlight-color: #134087;
+  scrollbar-track-color: #011433;
+  scrollbar-arrow-color: #011433;
+  scrollbar-shadow-color:#011433;
+  //scrollbar-dark-shadow-color: #011433;
+}

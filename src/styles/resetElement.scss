@@ -1,0 +1,83 @@
+// 重置element-ui默认的一些样式
+
+// 表格线不对齐问题
+body .el-table th.gutter {
+  display: table-cell !important
+}
+
+//禁用上传组件删除时候按按 delete 键可删除
+.el-upload-list__item .el-icon-close-tip {
+  display: none!important;
+}
+
+.el-button--primary {
+  cursor: pointer;
+  @include padding(10px, 24px, 10px, 24px);
+  @include fz();
+  @include color();
+  background: #233E6B!important;
+  border-radius: 4px;
+  border: none;
+  &:hover {
+    @include color();
+    @include color-border($primary-color);
+    background: #233E6B!important;
+  }
+}
+
+// checkbox、radio的颜色
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  @include color($primary-color);
+
+}
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  @include background($primary-color);
+  @include color-border($primary-color);
+
+}
+
+// 输入框边框颜色
+.el-input .el-input__inner:focus {
+  @include color-border($primary-color);
+}
+
+// 滚动条样式
+.el-scrollbar__wrap{
+  overflow-x: hidden;
+}
+
+// 左侧菜单导航样式
+.aside-container {
+  position: relative;
+  .el-menu {
+    @include background($primary-color);
+    border-right: none;
+  }
+  .el-submenu__title,
+  .el-menu-item {
+    @include color($default-body-background-color);
+    i {
+      @include color($default-body-background-color);
+    }
+    &:hover {
+      background: $primary-color;
+    }
+  }
+  // .el-submenu .el-menu-item:hover {
+  //   background: $primary-color;
+  // }
+
+}
+.el-menu-item.is-active {
+  color: red;
+  // background-color: #EAEEFF;
+}
+
+
+
+
+
+
+
+
+
