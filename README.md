@@ -30,12 +30,7 @@
 `vue-property-decorator`是基于`vue-class-component`开发而成的一款在V2.X 版本中使用`TypeScript`时的基于类的注解装饰器（尤推荐）
 `vue-property-decorator`的使用请移步[vue-property-decorator](https://www.npmjs.com/package/vue-property-decorator)官网
 
-## 4、项目展示截图
-![项目A](./src/assets/demo/1.png)
-![项目A](./src/assets/demo/2.png)
-![项目B](./src/assets/demo/3.png)
-![项目C](./src/assets/demo/4.png)
-![项目D](./src/assets/demo/5.png)
+## 4、最后说明，除了登录页面，其它的页面并没有写，根据自己的实际情况来编写页面
 
 
 ## 5、使用方法
